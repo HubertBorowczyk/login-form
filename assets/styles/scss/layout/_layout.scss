@@ -1,0 +1,213 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: rgba(0, 0, 0, 0.5);
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  color: $text-color;
+}
+*{
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.35);
+  @include breakpoint(desktop) {
+    width: 70vw;
+    margin: 2rem auto;
+  }
+  .header {
+    text-transform: uppercase;
+    color: $brand_color;
+    text-align: center;
+    font-size: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid $bg_color;
+    font-weight: bold;
+    margin: 0;
+  }
+  .offer {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto 0;
+    @include breakpoint(tablet) {
+      flex-direction: row;
+      justify-content: space-around;
+      margin: 20px 0;
+    }
+    .offer__item {
+      font-size: 14px;
+      margin-bottom: 20px;
+      @include breakpoint(tablet) {
+        margin: 0;
+      }
+      &:before {
+        content: '';
+        color: $brand_color;
+        vertical-align: middle;
+        margin-right: 15px;
+        background-size: 30px 30px;
+        display: inline-block;
+        height: 30px;
+        width: 30px;
+      }
+      &:first-child:before {
+        background-image: url(../../img/icons/tag-primary.svg);
+      }
+      &:nth-child(2):before {
+        background-image: url(../../img/icons/percent-primary.svg);
+      }
+      &:last-child:before {
+        background-image: url(../../img/icons/star-primary.svg);
+      }
+      .offer__span {
+        font-weight: 700;
+      }
+    }
+  }
+  .form_wrapper {
+    background-color: $bg_color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 20px 0;
+    .form {
+      @include breakpoint(tablet) {
+        width: 50%;
+      }
+      table {
+        margin: 0 auto;
+        width:100%;
+      }
+      .form__row {
+        td {
+          vertical-align: middle;
+          padding: 0 5px 10px;
+          text-align: center;
+          @include breakpoint(tablet){
+            padding: 0 5px 20px;
+          }
+        }
+        .form__label {
+          display: none;
+          @include breakpoint(tablet) {
+            display: inline;
+            font-size: 16px;
+          }
+        }
+        .form__input {
+          display: inline-block;
+          font-size: 14px;
+          padding: 10px 15px;
+          border: 1px solid #b9b9b9;
+          border-bottom: 1px solid #000;
+          width: 100%;
+          text-align: center;
+          &:focus {
+            border: 1px solid $brand_color;
+          }
+          @include breakpoint(desktop){
+            width:80%;
+            margin-left: 0;
+          }
+        }
+        ::-webkit-input-placeholder { /* WebKit browsers */
+          color: $text-color;
+          @include breakpoint(tablet) {
+            color: transparent;
+          }
+        }
+        :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+          color: $text-color;
+          @include breakpoint(tablet) {
+            color: transparent;
+          }
+        }
+        ::-moz-placeholder { /* Mozilla Firefox 19+ */
+          color: $text-color;
+          @include breakpoint(tablet) {
+            color: transparent;
+          }
+        }
+        :-ms-input-placeholder { /* Internet Explorer 10+ */
+          color: $text-color;
+          @include breakpoint(tablet) {
+            color: transparent;
+          }
+        }
+
+        .form__btn {
+          background-color: $brand_color;
+          color: #ffffff;
+          padding: 10px;
+          border: none;
+          width: 100%;
+          margin: 0 auto;
+          font-size: 14px;
+          text-transform: uppercase;
+          display: block;
+          @include breakpoint(tablet) {
+            width: 60%;
+            //font-size: 14px;
+          }
+          &:hover {
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.35);
+          }
+        }
+        .form__info{
+          font-size: 16px;
+          .form__anchor{
+            text-transform: uppercase;
+            color:$brand_color;
+          }
+        }
+      }
+    }
+  }
+  .about {
+    .about__wrapper {
+      display: flex;
+      flex-direction: column;
+      width: 95%;
+      margin: 0 auto;
+      border-bottom: 1px solid $bg_color;
+      &:last-child {
+        border-bottom: none;
+      }
+      @include breakpoint(tablet) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
+      .label {
+        font-size: 16px;
+        width: 100%;
+        text-align: center;
+        margin: 10px auto;
+        @include breakpoint(tablet) {
+          width: 20%;
+          margin: 0 auto;
+        }
+      }
+      img {
+        width: 100%;
+        height: auto;
+        @include breakpoint(tablet) {
+          width: 80%;
+          margin: 0;
+        }
+      }
+      .avatars__list {
+        list-style: none;
+        display: flex;
+        padding: 0;
+      }
+    }
+  }
+}
